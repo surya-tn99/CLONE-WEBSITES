@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0; 
+}
+/* top left menu boxes */
+#top-left{
+    display: flex;
+    flex-direction: rows;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-wrap: nowrap;
+}
+#top-left .top-l-menu-box{
+    padding: 10px;
+}
+
+#top-left .top-l-menu-box #lang{
+    appearance: none;
+    padding: 5px 25px;
+    background-image: url(img/down-arrow-svgrepo-com.png); 
+    background-repeat: no-repeat;
+    background-position: right 0.65rem center;
+    background-size: 0.35rem;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+#top-left .top-l-menu-box #lang option{
+    color: black;   
+}
+
+#top-left .top-l-menu-box button{
+    background-color: rgb(229,10,20);
+    padding: 9px 17px;
+    color: white;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 5px;
+}
+
+/*
+    top right - website logo  
+    width and height of logo is given at last (@media) 
+*/
+#top-right{
+    img{
+        display: inline;
+        background-color:transparent;
+    }
+    display: flex;
+    align-items: top;
+}
+/* end of top right */
+#header-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto 10%;
+    padding: 1.75%;
+}
+/* end of header top */
+#header{
+    z-index: 0;
+}
+#header::before{
+    content: "";
+    background-image: url(img/largeBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.3;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}
+
+@media (min-width:760px){       
+    img{
+        width: 9.5rem;
+        height: 2.4rem;
+    }
+    body{
+        background-color: black;
+    }
+}
+@media(min-width:320px) and (max-width:759px){
+    img{
+        width: 8rem;
+        height: 2.5rem;
+    }
+    body{
+    background-color:violet;
+    }
+}
+@media(max-width:380px){
+    #header-top,#top-left{
+        flex-direction: column;
+    }
+}
