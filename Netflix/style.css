@@ -23,15 +23,15 @@
     background-position: right 0.65rem center;
     background-size: 0.35rem;
     background-color: transparent;
-    color:white;
+    color: white;
     font-size: 1rem;
     border: none;
     outline: none;
 }
 
-#top-left .top-l-menu-box select option{
-    background-color:white;
-    color:black;
+#top-left .top-l-menu-box select option {
+    background-color: white;
+    color: black;
     font-size: 0.9rem;
 }
 
@@ -41,9 +41,9 @@
     border: 0.5px solid rgba(255, 255, 255, 0.267);
     border-radius: 5px;
 }
- 
+
 #top-left .top-l-menu-box #select-lang:focus-within {
-    border-color:white;    
+    border-color: white;
 }
 
 #top-left .top-l-menu-box #select-lang img {
@@ -53,7 +53,7 @@
 
 
 #top-left .top-l-menu-box button {
-    background-color: rgb(229, 10, 20);
+    background-color: #e50a14;
     padding: 9px 17px;
     color: white;
     font-size: 0.8rem;
@@ -89,18 +89,99 @@
 
 #header::before {
     content: "";
-    background-image: url(img/largeBackground.jpg);
+    background:
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.785), transparent, transparent, rgba(0, 0, 0, 0.753)),
+        url(img/largeBackground.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;
-    opacity: 0.3;
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    box-shadow: 0 -10px 30px red;
 }
 
 #header {
     z-index: 0;
+    color: white;
+}
+
+#header-body {
+    display: flex;
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+#header-body #content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    background-color: transparent;
+    font-family: sans-serif;
+}
+
+#header-body #content #heading {
+    font-size: 4rem;
+    width: 85%;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#header-body #content #sub-heading {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+#header-body #content #para {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#header-body #content #get-email {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+#header-body #content #get-email input {
+    width: 19rem;
+    padding: 18px 10px;
+    border: 0.5px solid rgba(255, 255, 255, 0.767);
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    background: linear-gradient(to bottom, rgb(34, 31, 31, 0.545), rgba(34, 31, 31, 0.577));
+    backdrop-filter: blur(1px);
+}
+
+#header-body #content #get-email button {
+    width: 12.25rem;
+    color: white;
+    border: 0.5px solid rgba(229, 10, 20, 0.267);
+    border-radius: 5px;
+    font-size: 100%;
+    align-items: center;
+    justify-content: center;
+
+    padding-right: 38px;
+    padding-left: 10px;
+
+    background-image: url(img/right-arrow-svgrepo-com.png);
+    background-size: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+    background-color: rgb(229, 10, 20);
 }
 
 @media (min-width:760px) {
@@ -119,9 +200,40 @@
         width: 8rem;
         height: 2.5rem;
     }
+    
+    #header-body #content{
+        width: 70%;
+    }
 
+    #header-body #content #heading {
+        font-size: 2.5rem;
+    }
+
+    #header-body #content #sub-heading {
+        font-size: 1rem;
+    }
+
+    #header-body #content #para {
+        font-size: 0.9rem;
+    }
+
+    #header-body #content #get-email {
+        font-size: 1rem;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    #header-body #content #get-email input{
+        width: 100%;
+    }
+    #header-body #content #get-email button{
+        padding: 15px 8px 15px 0px ;
+        display: inline;
+    }
+
+    
     body {
-        background-color: violet;
+        background-color: black;
     }
 }
 
@@ -130,5 +242,8 @@
     #header-top,
     #top-left {
         flex-direction: column;
+    }
+    body{
+        background-color: black;
     }
 }
