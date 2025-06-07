@@ -1,38 +1,59 @@
-*{
+* {
     margin: 0;
-    padding: 0; 
-}
-/* top left menu boxes */
-#top-left{
-    display: flex;
-    flex-direction: rows;
-    align-items: center;
-    flex-wrap: nowrap;
-    text-wrap: nowrap;
-}
-#top-left .top-l-menu-box{
-    padding: 10px;
+    padding: 0;
 }
 
-#top-left .top-l-menu-box #lang{
+/* top left menu boxes */
+#top-left {
+    display: flex;
+    flex-direction: row;
+    align-items: top;
+    flex-wrap: nowrap;
+}
+
+#top-left .top-l-menu-box {
+    padding: 0 8px;
+}
+
+#top-left .top-l-menu-box select {
     appearance: none;
-    padding: 5px 25px;
-    background-image: url(img/down-arrow-svgrepo-com.png); 
+    padding: 5px 5px 5px 3px;
+    background-image: url(img/down-arrow-svgrepo-com.png);
     background-repeat: no-repeat;
     background-position: right 0.65rem center;
     background-size: 0.35rem;
     background-color: transparent;
-    color: white;
+    color:white;
     font-size: 1rem;
+    border: none;
+    outline: none;
+}
+
+#top-left .top-l-menu-box select option{
+    background-color:white;
+    color:black;
+    font-size: 0.9rem;
+}
+
+#top-left .top-l-menu-box #select-lang {
+    display: flex;
+    flex-direction: row;
+    border: 0.5px solid rgba(255, 255, 255, 0.267);
     border-radius: 5px;
 }
-
-#top-left .top-l-menu-box #lang option{
-    color: black;   
+ 
+#top-left .top-l-menu-box #select-lang:focus-within {
+    border-color:white;    
 }
 
-#top-left .top-l-menu-box button{
-    background-color: rgb(229,10,20);
+#top-left .top-l-menu-box #select-lang img {
+    width: 100%;
+    height: 1.7rem;
+}
+
+
+#top-left .top-l-menu-box button {
+    background-color: rgb(229, 10, 20);
     padding: 9px 17px;
     color: white;
     font-size: 0.8rem;
@@ -44,27 +65,29 @@
     top right - website logo  
     width and height of logo is given at last (@media) 
 */
-#top-right{
-    img{
+#top-right {
+    img {
         display: inline;
-        background-color:transparent;
+        background-color: transparent;
     }
+
     display: flex;
     align-items: top;
 }
+
 /* end of top right */
-#header-top{
+#header-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: auto 10%;
     padding: 1.75%;
+    height: 5rem;
 }
+
 /* end of header top */
-#header{
-    z-index: 0;
-}
-#header::before{
+
+#header::before {
     content: "";
     background-image: url(img/largeBackground.jpg);
     background-repeat: no-repeat;
@@ -76,26 +99,36 @@
     height: 100vh;
 }
 
-@media (min-width:760px){       
-    img{
+#header {
+    z-index: 0;
+}
+
+@media (min-width:760px) {
+    img {
         width: 9.5rem;
         height: 2.4rem;
     }
-    body{
+
+    body {
         background-color: black;
     }
 }
-@media(min-width:320px) and (max-width:759px){
-    img{
+
+@media(min-width:320px) and (max-width:759px) {
+    img {
         width: 8rem;
         height: 2.5rem;
     }
-    body{
-    background-color:violet;
+
+    body {
+        background-color: violet;
     }
 }
-@media(max-width:380px){
-    #header-top,#top-left{
+
+@media(max-width:380px) {
+
+    #header-top,
+    #top-left {
         flex-direction: column;
     }
 }
